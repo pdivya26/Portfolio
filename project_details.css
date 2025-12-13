@@ -1,0 +1,207 @@
+:root {
+    --bg: #1c0022; /* Darker purple background */
+    --text: #E0E0E0;
+    --accent1: #973197; /* Main purple accent */
+    --hover1: #b842b8; /* Lighter purple for hover/glow */
+    --accent2: #d8b8ff; /* Very light purple for strong glows/highlights */
+}
+
+body {
+    font-family: 'Verdana';
+    background: radial-gradient(circle at top left, var(--bg), transparent 60%), radial-gradient(circle at bottom right, rgba(120, 30, 120, 0.3), transparent 70%), var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-20%);
+    }
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.navbar {
+    padding: 1rem 2rem; 
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative; 
+    z-index: 2;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    width: 100%;
+}
+
+.nav-links a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #CCCCCC;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
+    justify-content: space-between;
+}
+
+.nav-links a:hover {
+    background-color: var(--hover1); 
+    border-radius: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 0 15px var(--hover1); 
+    transition: all 0.3s ease;
+}
+
+.nav-links a.active {
+    color: var(--text);
+    font-weight: bold;
+    border-bottom: 2px solid var(--hover1);
+}
+
+.project-details {
+    width: 90%;
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #141414;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-details h4 {
+    font-size: 1rem;
+    margin: 1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.project-details p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+#project-title {
+    margin-top: 10px;
+}
+
+.project-gitlink, .project-link {
+    display: inline-block;
+    background-color: var(--accent1);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.project-gitlink:hover, .project-link:hover {
+    background-color: var(--hover1);
+}
+
+.back-link-container {
+    display: block;
+    text-align: center;
+}
+
+.back-link {
+    text-decoration: none;
+    background-color: var(--accent1);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.back-link:hover {
+    background-color: var(--hover1);
+}
+
+.btn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel img {
+    width: 100%; 
+    height: auto; 
+    max-height: 400px; 
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.carousel-btn.left {
+    left: 10px;
+    text-align: center;
+}
+
+.carousel-btn.right {
+    right: 10px;
+    text-align: center;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); 
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Light border */
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+    max-width: 70%;
+    border-radius: 12px;
+}

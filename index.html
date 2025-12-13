@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>Portfolio | Divya Poojari</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Nav Bar -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <nav class="nav-links">
+            <a href="" class="active">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="certificates.html">Certifications</a>
+            <a href="index.html#contact-me">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-content-wrapper">
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm Divya!</h1>
+                    <p>A B.Tech student passionate about building intuitive digital experiences with clean code and creative design.</p>
+                </div>
+                <div class="hero-img-wrapper">
+                    <div class="spot-glow"></div>
+                    <div class="hero-img-frame">
+                        <img src="images/PixarMe.png" alt="Divya" class="hero-img" />
+                    </div>
+                </div>  
+            </div>
+        </section>
+
+    <!-- About -->
+    <section class="about glass">
+        <h2>About Me</h2>
+        <p>I am a passionate and dedicated B.Tech Information Technology student with a strong foundation in programming, data analysis, and software development. I enjoy exploring diverse technologies and applying them to solve real-world problems.</p>
+
+        <p>My skill set spans across multiple domains — from programming languages like <b>C, C++, Java, and Python</b>, to web technologies including <b>HTML, CSS, and JavaScript</b>. I also work with tools such as <b>Git, GitHub, Docker, and Figma</b> for collaboration and design. With a keen interest in data, I have hands-on experience in <b>Excel, Power BI, Tableau</b>, and database systems like <b>MySQL, PostgreSQL, and MongoDB</b>.</p>
+
+        <p>I am always eager to learn, adapt, and contribute to projects that challenge me and help me grow as a professional. My goal is to leverage my skills to build impactful solutions and gain meaningful experiences in the fields of technology and data.
+        </p>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <a href="project_details.html?id=leetmentor" target="_blank">
+                <div class="card glass">
+                    <img src="images\LeetMentor.png" alt="LeetMentor" width="400px" class="project-image"/>
+                    <h3>LeetMentor</h3>
+                    <p>A Leetcode extension that detects the problem and provides step by step explain as well as the code to solve it.</p>
+                </div>
+            </a>
+            <a href="project_details.html?id=paperly" target="_blank">
+                <div class="card glass">
+                    <img src="images\Paperly.png" alt="Paperly" width="400px" class="project-image"/>
+                    <h3>Paperly</h3>
+                    <p>A unified academic platform that aggregates research papers from multiple sources for easier discovery.</p>
+                </div>
+            </a>
+            <a href="project_details.html?id=superstore-sales-prediction" target="_blank">
+                <div class="card glass">
+                    <img src="images\pred1.png" alt="Superstore Sales Prediction Model" width="400px" class="project-image"/>
+                    <h3 class="project-title">Superstore Sales Prediction</h3>
+                    <p>A model that analyzes historical sales data from a superstore to predict future sales trends.</p>
+                </div>
+            </a>
+            <a href="project_details.html?id=superstore-sales-analysis" target="_blank">
+                <div class="card glass">
+                    <img src="images\salesdb1.png" alt="Superstore Sales Analysis" width="400px" class="project-image"/>
+                    <h3>Superstore Sales Analysis</h3>
+                    <p>A fully interactive Power BI dashboard designed to analyze Superstore sales performance providing deep insights using dynamic filters and visual analytics.</p>
+                </div>
+            </a>
+            <a href="project_details.html?id=disney-mrs" target="_blank">
+                <div class="card glass">
+                    <img src="images\DMRS.png" alt="Disney Movie Recommendation System" width="400px" class="project-image"/>
+                    <h3>Disney Movie Recommendation System</h3>
+                    <p>A Python-based desktop application that recommends Disney movies based on title, genre or random suggestions.</p>
+                </div>
+            </a>
+            <a href="project_details.html?id=clinicare" target="_blank">
+                <div class="card glass">
+                    <img src="images/CliniCare.png" alt="CliniCare" width="400px" class="project-image"/>
+                    <h3>CliniCare</h3>
+                    <p>A clinic management application built entirely using python to streamline workflow in clinics.</p>
+                </div>
+            </a>
+        </div>
+        <div class="view-all-container">
+            <a class="view-all" href="projects.html" target="_blank">View All</a>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <h2 class="skills">Skills</h2>
+    <section class="skills-carousel">
+        <div class="carousel-track" id="skillsTrack"></div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact-me" class="contact-me glass">
+        <h2>Let's Get in Touch!</h2>
+        <div class="contact-form">
+            <form action="https://formspree.io/f/xdkzdndd" method="POST">
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="Enter your name here" id="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" name="_replyto" placeholder="Enter your email here" id="email" required>
+
+                <label for="message">Message</label>
+                <textarea name="message" placeholder="Enter your message here" id="message" rows="5" required></textarea>
+
+                <div class="submit-btn">
+                    <button type="submit" class="btn">Send Message</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="contact-links" style="text-align: center; margin-top: 2rem;">
+            <h3>Or Connect with Me Here</h3>
+            <div class="links">
+                <a href="mailto:divyagpoojari15@gmail.com">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="https://github.com/pdivya26" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/divya-poojari/" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute("href");
+            if (linkPage === currentPage || linkPage === "" && currentPage === "index.html") {
+                link.classList.add("active");
+            }
+        });
+
+        const skills = [
+            { icon: "fab fa-c", label: "C" },
+            { icon: "fab fa-c", label: "C++", extra: "++" },
+            { icon: "fab fa-java", label: "Java" },
+            { icon: "fab fa-python", label: "Python" },
+            { icon: "fab fa-html5", label: "HTML5" },
+            { icon: "fab fa-css3-alt", label: "CSS3" },
+            { icon: "fab fa-js", label: "JavaScript" },
+            { icon: "fab fa-git-alt", label: "Git" },
+            { icon: "fab fa-github", label: "GitHub" },
+            { icon: "fab fa-figma", label: "Figma" },
+            { icon: "fab fa-docker", label: "Docker" },
+            { icon: "fas fa-file-excel", label: "Excel" },
+            { icon: "fas fa-chart-simple", label: "Power BI" },
+            { icon: "fas fa-chart-line", label: "Tableau" },
+            { icon: "fas fa-database", label: "MySQL" },
+            { icon: "fas fa-database", label: "PostgreSQL" },
+            { icon: "fas fa-leaf", label: "MongoDB" }
+        ];
+
+        const track = document.getElementById("skillsTrack");
+
+        skills.concat(skills).forEach(skill => { // duplicate list for loop effect
+            const card = document.createElement("div");
+            card.className = "skill-card glass";
+
+            card.innerHTML = `
+                <div class="skill-icon">
+                    <i class="${skill.icon}"></i>
+                    ${skill.extra ? `<span class="plus-plus">${skill.extra}</span>` : ""}
+                </div>
+                <span>${skill.label}</span>
+            `;
+
+            track.appendChild(card);
+        });
+
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    alert("Message sent successfully!");
+                    form.reset(); 
+                } else {
+                    alert("Something went wrong. Please try again.");
+                }
+            }).catch(error => {
+                alert("There was a problem submitting your form.");
+            });
+        });
+
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+
+        let PARTICLE_COUNT;
+
+        if (window.innerWidth < 480) {
+            PARTICLE_COUNT = 20;     // small phones
+        } else if (window.innerWidth < 768) {
+            PARTICLE_COUNT = 35;     // tablets
+        } else {
+            PARTICLE_COUNT = 60;     // desktops
+        }
+
+        const particles = [];
+
+        // Create particles
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 1,
+                vy: (Math.random() - 0.5) * 1,
+                size: window.innerWidth < 480 ? 1.5 : 2 // smaller dots on phone
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.globalAlpha = 0.55;
+
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = "#ffffff";
+                ctx.fill();
+            });
+
+            const LINK_DIST = window.innerWidth < 480 ? 60 : 100;
+
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < LINK_DIST) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / LINK_DIST})`;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+
+        window.addEventListener("resize", () => {
+            resizeCanvas();
+        });
+
+    </script>
+
+</body>
+</html>

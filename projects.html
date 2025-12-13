@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Divya</title>
+  <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Nav Bar -->
+    <header class="navbar">
+    <div class="navbar-container">
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="" class="active">Projects</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="index.html#contact-me">Contact</a>
+        </nav>
+    </div>
+    </header>
+    <h1>My Projects</h1>
+
+    <p class="subtitle">From quick experiments to impactful real-world solutions — a showcase of diverse and meaningful projects.</p>
+
+    <div class="tabs">
+        <div class="tab active glass" onclick="filterProjects('all')">All</div>
+        <div class="tab glass" onclick="filterProjects('da')">Data Analysis</div>
+        <div class="tab glass" onclick="filterProjects('ds')">Data Science</div>
+        <div class="tab glass" onclick="filterProjects('ml')">Machine Learning</div>
+        <div class="tab glass" onclick="filterProjects('web')">Web Development</div>
+        <div class="tab glass" onclick="filterProjects('dsap')">Desktop Application</div>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+        <!-- LeetMentor -->
+        <a href="project_details.html?id=leetmentor" target="_blank" class="card-link">
+            <div class="project-card glass" data-category="web">
+                <img src="images/LeetMentor.png" alt="Project Image" class="project-image" />
+                <div class="project-title">LeetMentor</div>
+                <div class="project-desc">A Leetcode extension that detects the problem and provides step by step explain as well as the code to solve it.</div>
+            </div>
+        </a>
+
+        <!-- Paperly -->
+        <a href="project_details.html?id=paperly" target="_blank" class="card-link">
+            <div class="project-card glass" data-category="web">
+                <img src="images/Paperly.png" alt="Project Image" class="project-image" />
+                <div class="project-title">Paperly</div>
+                <div class="project-desc">A unified academic platform that aggregates research papers from multiple sources for easier discovery.</div>
+            </div>
+        </a>
+
+        <!-- Superstore Sales Prediction -->
+        <a href="project_details.html?id=superstore-sales-prediction" target="_blank" class="card-link">
+            <div class="project-card glass" data-category="ds">
+                <img src="images/pred1.png" alt="Project Image" class="project-image" />
+                <div class="project-title">Superstore Sales Prediction</div>
+                <div class="project-desc">A model that analyzes historical sales data from a superstore to predict future sales trends.</div>
+            </div>
+        </a>
+
+        <!-- Superstore Sales Analysis -->
+        <a href="project_details.html?id=superstore-sales-analysis" target="_blank" class="card-link">
+            <div class="project-card glass" data-category="da">
+                <img src="images/salesdb1.png" alt="Project Image" class="project-image" />
+                <div class="project-title">Superstore Sales Analysis</div>
+                <div class="project-desc">A fully interactive Power BI dashboard designed to analyze Superstore sales performance providing deep insights using dynamic filters and visual analytics.</div>
+            </div>
+        </a>
+
+        <!-- Disney Movie Recommendation System -->
+        <a href="project_details.html?id=disney-mrs" target="_blank" class="card-link">
+            <div class="project-card glass" data-category="ml">
+                <img src="images/DMRS.png" alt="Project Image" class="project-image" />
+                <div class="project-title">Disney Movie Recommendation System</div>
+                <div class="project-desc">A Python-based desktop application that recommends Disney movies based on title, genre or random suggestions.</div>
+            </div>
+        </a>
+
+        <!-- Pregnancy Risk Prediction -->
+        <a href="project_details.html?id=pregnancy-risk-prediction" target="_blank" class="card-link">
+            <div class="project-card glass" data-category="ds">
+                <img src="images/PRP1.png" alt="Project Image" class="project-image" />
+                <div class="project-title">Pregnancy Risk Prediction</div>
+                <div class="project-desc">A predictive model that estimates pregnancy risk level based on maternal health data integrated with an AI assistant for personalized health insights,</div>
+            </div>
+        </a>
+
+        <!-- Demand Forecasting -->
+        <a href="project_details.html?id=demand-forecasting" target="_blank" class="card-link">
+            <div class="project-card glass" data-category="dsap">
+                <img src="images/DemandForecasting.png" alt="Project Image" class="project-image" />
+                <div class="project-title">Demand Forecasting</div>
+                <div class="project-desc">A system that analyzes historical sales data and predicts future product demand using machine learning models along with visualizations to support inventory planning.</div>
+            </div>
+        </a>
+
+        <!-- CliniCare -->
+        <a href="project_details.html?id=clinicare" target="_blank" class="card-link">
+            <div class="project-card glass" data-category="dsap">
+                <img src="images/CliniCare.png" alt="Project Image" class="project-image" />
+                <div class="project-title">CliniCare</div>
+                <div class="project-desc">A desktop application is a robust and well-structured clinic management desktop application enabling doctors or clinic administrators to streamline</div>
+            </div>
+        </a>
+
+        <!-- Task Manager -->
+        <a href="project_details.html?id=task-manager" target="_blank" class="card-link">
+            <div class="project-card glass" data-category="web">
+                <img src="images/TaskManager.png" alt="Project Image" class="project-image" />
+                <div class="project-title">Task Manager</div>
+                <div class="project-desc">A simple and lightweight task manager where user can add task, set priority and delete tasks.</div>
+            </div>
+        </a>
+
+        <!-- Rock Paper Scissors -->
+        <a href="project_details.html?id=rock-paper-scissors" target="_blank" class="card-link">
+            <div class="project-card glass" data-category="web">
+                <img src="images/RockPaperScissors.png" alt="Project Image" class="project-image" />
+                <div class="project-title">Rock Paper Scissors</div>
+                <div class="project-desc">A simple Rock Paper Scissors game developed using only HTML, CSS, JavaScript.</div>
+            </div>
+        </a>
+
+        <!-- Tic Tac Toe -->
+        <a href="project_details.html?id=tic-tac-toe" target="_blank" class="card-link">
+            <div class="project-card glass" data-category="web">
+                <img src="images/TicTacToe.png" alt="Project Image" class="project-image" />
+                <div class="project-title">Tic Tac Toe</div>
+                <div class="project-desc">A dual-player Tic Tac Toe game developed using HTML, CSS, JavaScript.</div>
+            </div>
+        </a>
+
+        <!-- Currency Convertor -->
+        <a href="project_details.html?id=currency-convertor" target="_blank" class="card-link">
+            <div class="project-card glass" data-category="web">
+                <img src="images/CurrencyConvertor.png" alt="Project Image" class="project-image" />
+                <div class="project-title">Currency Convertor</div>
+                <div class="project-desc">A simple currency converter which fetches real-time exchange rates using the ExchangeRate-API.</div>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        function filterProjects(category) {
+            const allTabs = document.querySelectorAll('.tab');
+            allTabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const projects = document.querySelectorAll('.project-card');
+            projects.forEach(project => {
+                const cat = project.getAttribute('data-category');
+                if (category === 'all' || cat === category) {
+                    project.parentElement.style.display = "block"; 
+                } else {
+                    project.parentElement.style.display = "none"; 
+                }
+            });
+        }
+
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const numParticles = 60;
+
+        for (let i = 0; i < numParticles; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 1,
+            vy: (Math.random() - 0.5) * 1
+        });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.globalAlpha = 0.5; 
+
+            // Draw particles
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+                ctx.fillStyle = '#ffffff';
+                ctx.fill();
+            });
+
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 100})`;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+
+        window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        });
+
+    </script>
+
+</body>
+</html>

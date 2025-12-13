@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Divya</title>
+  <link rel="stylesheet" href="resume.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Nav Bar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="">Resume</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="index.html#contact-me">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Resume</h1>
+        <div class="resume-input">
+            <div class="input">
+                <p>Select a role to view Resume</p>
+                <select id="roleSelect">
+                    <option value="general">General</option>
+                    <option value="datascience">Data Science</option>
+                    <option value="dataanalytics">Data Analytics</option>
+                </select>
+                <button onclick="showResume()">View</button>
+            </div>
+        </div>
+        
+        <div id="resumeContainer" style="display:none;">
+        <iframe id="resumeFrame"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function showResume() {
+        const role = document.getElementById('roleSelect').value;
+        const frame = document.getElementById('resumeFrame');
+        const container = document.getElementById('resumeContainer');
+
+        if (!role) {
+            alert("Please select a role first.");
+            return;
+        }
+
+        // Update these paths with your actual PDF links
+        const resumeLinks = {
+            datascience: "pdfs/ResumeDS.pdf",
+            dataanalytics: "pdfs/ResumeDA.pdf",
+            general: "pdfs/ResumeML.pdf"
+        };
+
+        frame.src = resumeLinks[role];
+        container.style.display = "block";
+        }
+
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const numParticles = 60;
+
+        for (let i = 0; i < numParticles; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 1,
+            vy: (Math.random() - 0.5) * 1
+        });
+        }
+
+        function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.globalAlpha = 0.5; 
+
+        // Draw particles
+        particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+
+            if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffffff'; 
+            // getComputedStyle(document.documentElement).getPropertyValue('--accent');
+            ctx.fill();
+        });
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 100) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 100})`;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        requestAnimationFrame(draw);
+        }
+
+        draw();
+
+        window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        });
+
+    </script>
+</body>
+</html>

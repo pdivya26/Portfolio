@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certifications | Divya</title>
+  <link rel="stylesheet" href="certifications.css">
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Nav Bar -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="" class="active">Certifications</a>
+            <a href="index.html#contact-me">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <h1>My Certifications</h1>
+    <p class="subtitle">Certifications that reflect my commitment to continuous learning and expertise in various domains.</p>
+
+    <div class="tabs">
+        <div class="tab active glass" onclick="filterCerts('all')">All</div>
+        <div class="tab glass" onclick="filterCerts('ac')">Academics</div>
+        <div class="tab glass" onclick="filterCerts('da')">Data Analytics</div>
+        <div class="tab glass" onclick="filterCerts('ss')">Soft Skills</div>
+        <div class="tab glass" onclick="filterCerts('bs')">Business</div>
+    </div>
+
+    <div class="certifications-grid" id="certificationsGrid">
+        <!-- Certification Card -->
+        <a href="images\Overall Topper Certificate.jpeg" target="_blank" class="card-link">
+          <div class="cert-card glass" data-category="ac">
+            <img src="images\Overall Topper Certificate.jpeg" alt="Sem VI Overall Topper Certificate" class="cert-image"/>
+            <div class="cert-title">Overall Topper In INFT Department</div>
+            <div class="cert-desc">Declared Overall Topper of INFT Department for Sem VI 2025 - 26.</div>
+          </div>
+        </a>
+
+        <a href="images\DFE Merit Certificate.jpeg" target="_blank">
+          <div class="cert-card glass" data-category="ac">
+          <img src="images\DFE Merit Certificate.jpeg" alt="DFE Merit Certificate" class="cert-image"/>
+          <div class="cert-title">Certificate of Merit for Data & Feature Engineering</div>
+          <div class="cert-desc">Secured First Place in subject Data & Feature Engineering in Sem VI.</div>
+          </div>
+        </a>
+
+        <a href="images\PLM Merit Certificate.jpeg" target="_blank">
+          <div class="cert-card glass" data-category="ac">
+            <img src="images\PLM Merit Certificate.jpeg" alt="PLM Merit Certificate" class="cert-image"/>
+            <div class="cert-title">Certificate of Merit for Product Lifecycle Management</div>
+            <div class="cert-desc">Secured First Place in subject Product Lifecycle Management in Sem VI.</div>
+          </div>
+        </a>
+
+        <a href="images\ADBMS Merit Certificate.jpeg" target="_blank">
+          <div class="cert-card glass" data-category="ac">
+            <img src="images\ADBMS Merit Certificate.jpeg" alt="ADBMS Merit Certificate" class="cert-image"/>
+            <div class="cert-title">Certificate of Merit for ADBMS</div>
+            <div class="cert-desc">Secured First Place in subject Advanced Database Management System in Sem V.</div>
+          </div>
+        </a>
+
+        <a href="images\Introduction to MS Excel Certificate.jpg" target="_blank">
+          <div class="cert-card glass" data-category="da">
+            <img src="images/Introduction to MS Excel Certificate.jpg" alt="Introduction to MS Excel Course Certificate" class="cert-image"/>
+            <div class="cert-title">Introduction to MS Excel</div>
+            <div class="cert-desc">Gained foundational skills in Excel, including formulas, charts, data analysis, and organizing data efficiently.</div>
+          </div>
+        </a>
+
+        <a href="images\Power BI Certificate.jpg" target="_blank" >
+          <div class="cert-card glass" data-category="da">
+            <img src="images/Power BI Certificate.jpg" alt="Power BI for Beginners Course Certificate" class="cert-image"/>
+            <div class="cert-title">Power BI for Beginners</div>
+            <div class="cert-desc">Learned to create interactive dashboards and visualizations, analyze data effectively, and share insights using Power BI.</div>
+          </div>
+        </a>
+
+        <a href="images\IIM Business Management Course Certificate.jpg" target="_blank">
+          <div class="cert-card glass" data-category="bs">
+            <img src="images/IIM Business Management Course Certificate.jpg" alt="IIM Business Management Course Certificate" class="cert-image"/>
+            <div class="cert-title">Business Management Course - IIM Mumbai</div>
+            <div class="cert-desc">Covered four key areas - Operations & Supply Chain Management, Financial Management, Marketing Management & Business Economics</div>  
+          </div>
+        </a>
+
+        <a href="images\Career Edge - Young Professional Certificate.jpg" target="_blank">
+          <div class="cert-card glass" data-category="ss">
+            <img src="images/Career Edge - Young Professional Certificate.jpg" alt="Career Edge - Young Professional Course Certificate" class="cert-image"/>
+            <div class="cert-title">TCS iON Career Edge - Young Professional</div>
+            <div class="cert-desc">Gained essential workplace skills, including communication, business etiquette, and professional readiness for a corporate environment.</div>
+          </div>
+        </a>
+    </div>
+
+    <script>
+        function filterCerts(category) {
+        const allTabs = document.querySelectorAll('.tab');
+        allTabs.forEach(tab => tab.classList.remove('active'));
+        event.target.classList.add('active');
+
+        const certs = document.querySelectorAll('.cert-card');
+        certs.forEach(cert => {
+            const cat = cert.getAttribute('data-category');
+            const wrapper = cert.parentElement;
+
+            if (category === 'all' || cat === category) {
+                wrapper.style.display = "block";
+            } else {
+                wrapper.style.display = "none";
+            }
+        });
+    }
+
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const numParticles = 60;
+
+        for (let i = 0; i < numParticles; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 1,
+            vy: (Math.random() - 0.5) * 1
+        });
+        }
+
+        function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.globalAlpha = 0.5; 
+
+        // Draw particles
+        particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+
+            if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffffff'; 
+            // getComputedStyle(document.documentElement).getPropertyValue('--accent');
+            ctx.fill();
+        });
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 100) {
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 100})`;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(draw);
+        }
+
+        draw();
+
+        window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        });
+
+    </script>
+</body>
+</html>

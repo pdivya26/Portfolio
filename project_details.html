@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Project Details | Divya</title>
+    <link rel="stylesheet" href="project_details.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Nav Bar -->
+    <header class="navbar">
+      <div class="navbar-container">
+          <nav class="nav-links">
+              <a href="index.html">Home</a>
+              <a href="projects.html" class="active">Projects</a>
+              <a href="certifications.html">Certifications</a>
+              <a href="index.html#contact-me">Contact</a>
+          </nav>
+      </div>
+    </header>
+
+    <section class="project-details glass">
+      <h2 id="project-title">Loading...</h2>
+      <div class="carousel-container">
+        <div class="carousel" id="carousel-images">
+        <!-- Images will be inserted here dynamically -->
+        </div>
+          <button class="carousel-btn left glass" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="carousel-btn right glass" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+      <p id="project-description"></p>
+      <div class="btn">
+          <a id="project-gitlink" href="#" target="_blank" class="project-gitlink">View on GitHub</a>
+          <a id="project-link" href="#" target="_blank" class="project-link">View Project</a>
+      </div>
+    </section>
+
+    <script>
+      const projects = {
+        "leetmentor": {
+          title: "LeetMentor",
+          description: `LeetMentor is a lightweight browser extension designed to assist users while solving LeetCode problems. It detects the active problem and provides problem explanations, step-by-step breakdowns, and multi-language solution code directly from a popup window.<br><br><b>Features:</b><br>
+          <ul>
+            <li>Detects the <b>active LeetCode problem title</b> and the <b>programming language</b> currently selected in the editor.</li>
+            <li>Generates clean, <b>beginner-friendly explanations</b> tailored to the detected problem.</li>
+            <li>Provides a <b>structured, logical walkthrough</b> to guide you from understanding the problem to forming the solution.</li>
+            <li>Automatically produces <b>optimized solution code in the same language you're using on LeetCode,</b> or any language you select from the popup.</li>
+            <li>Each solution includes <b>clear time and space complexity analysis</b>, helping you understand performance and trade-offs.</li>
+            <li>Built with pure <b>HTML, CSS, and JavaScript</b> — no heavy frameworks — ensuring instant responses and minimal resource usage.</li>
+          </ul>`,
+          gitlink: "https://github.com/pdivya26/LeetMentor.git",
+          images: [
+            "images/LeetMentor.png",
+            "images/lm1.png",
+            "images/lm2.png",
+            "images/lm3.png",
+            "images/lm4.png",
+            "images/lm5.png"
+          ]
+        },
+        "paperly": {
+          title: "Paperly",
+          description: `A unified academic research platform that aggregates research papers from multiple sources and ranks them by relevance, citations, and recency for easier discovery.<br><br><b>Features:</b>
+          <ul>
+            <li>Search relevant academic papers <b>by topic</b> instantly.</li>
+            <li>Filter papers from sources like <b>IEEE, ACM, arXiv, Springer, and OpenAlex.</b></li>
+            <li>Sort papers by <b>relevance, newest, oldest, most cited, least cited, or alphabetically</b>.</li>
+            <li>Generate concise <b>AI-powered summaries</b> for easier understanding.</li>
+            <li><b>Explore related papers</b> to the one you are viewing.</li>
+            <li>Clean, intuitive interface for easy navigation.</li>
+          </ul>`,
+          gitlink: "https://github.com/pdivya26/Paperly.git",
+          images: [
+            "images/Paperly.png",
+            "images/pl1.png",
+            "images/pl2.png",
+            "images/pl3.png"
+          ]
+        },
+        "superstore-sales-prediction": {
+          title: "Superstore Sales Prediction Model",
+          description: `This project focuses on analyzing historical sales data from a superstore to predict future sales trends. Using data preprocessing, exploratory data analysis (EDA), and machine learning models such as Random Forest, XGBoost, GradientBoosting and AdaBoosting the project aims to forecast sales.<br><br><b>Features:</b>
+          <ul>
+            <li>Data cleaning and preprocessing</li>
+            <li>Exploratory Data Analysis (EDA)</li>
+            <li>Model training and evaluation</li>
+            <li>Performance comparison using metrics (MAE, RMSE, R2)</li>
+            <li>Visualization of predictions and feature importance</li>
+            <li>Prediction of next 3 month sales</li>
+          </ul>`,
+          gitlink: "https://github.com/pdivya26/Superstore-Sales-Prediction.git",
+          images: [
+            "images/SalesPredictionGraph.png",
+            "images/rfmat.png",
+            "images/gbmat.png",
+            "images/xgmat.png",
+            "images/abmat.png",
+            "images/saleslearningcurve.png",
+            "images/pred1.png",
+            "images/pred2.png",
+            "images/pred3.png"
+          ]
+        },
+        "superstore-sales-analysis": {
+          title: "Superstore Sales Data Analysis",
+          description: `A fully interactive Power BI dashboard designed to analyze Superstore sales performance across providing deep insights into revenue, profit, quantity sold, and customer segments using dynamic filters and visual analytics.<br><br><b>Features: </b>
+          <ul>
+            <li>Interactive sales, profit, and quantity analysis across multiple years (2014–2017).</li>
+            <li>Dynamic filtering by region, state, order year, category, and segment.</li>
+            <li>Yearly and quarterly performance visuals for both sales and profit.</li>
+            <li>Profitability breakdown by category and sub-category.</li>
+            <li>State-level sales mapping for geographic insights.</li>
+            <li>Segment-wise performance comparison (Consumer, Corporate, Home Office).</li>
+            <li>Top-performing cities displayed with quantity and profit metrics.</li>
+            <li>Category &amp; sub-category dashboards for detailed product-level analysis.</li>
+          </ul>`,
+          gitlink: "https://github.com/pdivya26/Superstore-Sales-Prediction-And-Analysis.git",
+          images: [
+            "images/salesdb1.png",
+            "images/salesdb2.png",
+            "images/salesdb3.png"
+          ]
+        },
+        "disney-mrs": {
+          title: "Disney Movie Recommendation System",
+          description: `Disney Movie Recommendation System is a Python-based desktop application that recommends Disney movies based on title search, genre selection, or random suggestions. It uses a real dataset and predicts the movies that the user might enjoy based on the movie or genre they have entered.<br><br><b>Features:</b>
+          <ul>
+            <li>ML-powered movie recommendations using Naive Bayes and Decision Tree models.</li>
+            <li>Automated data preprocessing (cleaning, encoding, handling missing values).</li>
+            <li>Search by movie title to get similar recommendations.</li>
+            <li>Search by genre with a dropdown of all available Disney genres.</li>
+            <li>Random movie suggestions for quick discovery.</li>
+            <li>Displays like-probability (%) for each recommendation.</li>
+            <li>Accuracy comparison between both ML algorithms.</li>
+            <li>User-friendly Tkinter GUI with multiple interactive windows.</li>
+          </ul>`,
+          gitlink: "https://github.com/pdivya26/Disney-Movie-Recommendation-System.git",
+          images: [
+            "images/DMRS.png",
+            "images/DMRS1.png",
+            "images/DMRS2.png",
+            "images/DMRS3.png",
+            "images/DMRS4.png"
+          ]
+        },
+        "pregnancy-risk-prediction": {
+          title: "Pregnancy Risk Prediction",
+          description: `A simple Streamlit web app that predicts maternal health risk levels (Low, Mid, High) using machine learning models. It also provides AI-powered analysis and answers to maternal health questions using Gemini API.<br><br><b>Features:</b>
+          <ul>
+            <li>Predicts maternal health risk (Low, Mid, High) using <b>Random Forest, SVM, and LightGBM</b> models.</li>
+            <li>Uses a <b>multi-model voting mechanism</b> to improve reliability and accuracy.</li>
+            <li>Includes <b>strict medical input validation</b> to prevent unrealistic or unsafe values.</li>
+            <li>Features a <b>custom-designed Streamlit interface</b> with a consistent theme and improved user experience.</li>
+            <li>Integrated <b>AI chatbot using Gemini API</b> for detailed analysis and explanations of health metrics.</li>
+            <li>Designed to <b>support maternal health awareness</b> and provide decision-support insights.</li>
+          </ul>`,
+          gitlink: "https://github.com/pdivya26/Pregnancy-Risk-Prediction.git",
+          images: [
+            "images/PRP1.png",
+            "images/PRP2.png",
+            "images/PRP3.png",
+            "images/PRP4.png"
+          ]
+        },
+        "demand-forecasting": {
+          title: "Demand Forecasting",
+          description: `An interactive tool built with Python and Streamlit that analyzes historical sales, visualizes trends, and predicts future product demand using machine learning models.<br><br><b>Features:</b>
+          <ul> 
+            <li><b>Retail dataset preprocessing</b> with missing-value handling, log transformation, outlier removal, and advanced feature engineering.</li> 
+            <li><b>Interactive product category selection</b> for customized analysis.</li>
+            <li><b>Monthly, yearly, and trend visualizations</b> with annotated bar charts and line plots.</li>
+            <li><b>Machine learning predictions</b> using Random Forest, XGBoost, and Gradient Boosting.</li>
+            <li><b>Top feature selection</b> using model-based importance filtering.</li>
+            <li><b>Actual vs predicted monthly comparison</b> with clear visual graphs for each model.</li>
+            <li><b>Future sales forecasting</b> for the next month with multi-model comparison.</li>
+            <li><b>Performance metrics dashboard</b> including MAE, RMSE, and R² scores.</li>
+            <li><b>Streamlit UI</b> for easy navigation and interactive exploration.</li>
+          </ul>`,
+          gitlink: "https://github.com/pdivya26/Demand-Forecasting.git",
+          images: [
+            "images/DemandForecasting.png",
+            "images/DF1.png",
+            "images/DF2.png",
+            "images/DF3.png",
+            "images/DF4.png",
+            "images/DF5.png",
+            "images/DF6.png",
+            "images/DF7.png"
+          ]
+        },
+        "clinicare": {
+          title: "CliniCare",
+          description: `A clinic management application developed using Python and MySQL to optimize clinic operations, including patient management, appointment booking, and prescription handling within a structured and user-friendly environment.<br><br><b>Features: </b>
+          <ul>
+            <li>Automated User-ID generation with detailed input validation for patient records.</li>
+            <li>Enabled booking, viewing, and modification with date and time validation to prevent conflicts.</li>
+            <li>Added, viewed, and modified medical records with historical consistency checks.</li>
+            <li>Designed an intuitive GUI using Tkinter for seamless navigation and enhanced user experience.</li>
+            <li>Utilized MySQL for efficient data storage and retrieval.</li>
+          </ul>`,
+          gitlink: "https://github.com/pdivya26/CliniCare.git",
+          images: [
+            "images/CliniCare.png",
+            "images/cncr1.png",
+            "images/cncr2.png",
+            "images/cncr3.png",
+            "images/cncr4.png",
+            "images/cncr5.png",
+            "images/cncr6.png",
+            "images/cncr7.png",
+            "images/cncr8.png",
+            "images/cncr9.png",
+            "images/cncr10.png",
+            "images/cncr11.png"
+          ]
+        },
+        "task-manager": {
+          title: "Task Manager",
+          description: `A simple and lightweight Task Manager that allows users to create, view, update, delete, and sort tasks by priority, with built-in date validation and a clean, responsive interface.<br><br><b>Tech Stack:</b>
+          <ul>
+            <li><b>Frontend: </b>HTML, CSS, JavaScript</li>
+            <li><b>Backend: </b>Python with Flask</li>
+            <li><b>Database: </b>SQLite (lightweight, file-based)</li>
+          </ul>`,
+          gitlink: "https://github.com/pdivya26/TaskManager.git",
+          images: [
+            "images/TaskManager.png",
+          ]
+        },
+        "rock-paper-scissors": {
+          title: "Rock Paper Scissors",
+          description: `A simple Rock Paper Scissors game developed using HTML, CSS, and JavaScript. Designed to mimic human gameplay with animations.<br><br><b>Features:</b>
+          <ul>
+            <li>Classic Rock-Paper-Scissors gameplay</li>
+            <li>Responsive and beginner-friendly UI</li>
+            <li>Play against a random computer choice</li>
+            <li>Instant feedback on win/lose/draw</li>
+          </ul>`,
+          link: "https://pdivya26.github.io/RockPaperScissors/",
+          github: "https://github.com/pdivya26/RockPaperScissor.git",
+          images: [
+            "images/RockPaperScissors.png",
+            "images/rps1.png",
+            "images/rps2.png",
+            "images/rps3.png"
+          ]
+        },
+        "tic-tac-toe": {
+          title: "Tic Tac Toe",
+          description: `A simple 2-player Tic Tac Toe game built with HTML, CSS, and JavaScript. Players take turns to mark X or O in the grid. The game checks for a win or tie after each move. When a player wins or a tie occurs, a centered dialog box pops up showing the result.<br><br><b>Features: </b>
+          <ul>
+            <li>Interactive 3x3 grid</li>
+            <li>Win and tie detection</li>
+            <li>Dynamic turn tracking</li>
+            <li>Styled player moves</li>
+            <li>Centered popup for game result</li>
+            <li>Reset and new game options</li>
+            <li>A vanilla JavaScript project — no external libraries or frameworks used</li>
+          </ul>`,
+          link: "https://pdivya26.github.io/TicTacToe/",
+          gitlink: "https://github.com/pdivya26/TicTacToe.git",
+          images: [
+            "images/TicTacToe.png",
+            "images/ttt1.png",
+            "images/ttt2.png",
+            "images/ttt3.png"
+          ]
+        },
+        "currency-convertor": {
+          title: "Currency Convertor",
+          description: `A real-time currency converter fetching data from ExchangeRate-API, designed with clean UI and clear exchange results.<br><br><b>Features:</b>
+          <ul>
+            <li>Convert any amount between over 160 currencies</li>
+            <li>Real-time exchange rates using ExchangeRate-API</li>
+            <li>No backend required – all client-side</li>
+            <li>Easy-to-use and responsive design</li>
+          </ul>`,
+          gitlink: "https://github.com/pdivya26/CurrencyConvertor.git",
+          images: [
+            "images/CurrencyConvertor.png",
+            "images/cc1.png",
+            "images/cc2.png"
+          ]
+        },
+        "ds2": {
+          title: "Data Science Dashboard",
+          description: "A dashboard built with Plotly and Pandas that helps visualize large datasets interactively with charts and filters.",
+          gitlink: "#"
+        },
+        "da2": {
+          title: "Sales Dashboard",
+          description: "A clean dashboard using Excel & Python showing KPIs, trends, and insights on business performance.",
+          gitlink: "#"
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const projectId = params.get("id");
+      const project = projects[projectId];
+
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        const carousel = document.getElementById("carousel-images");
+        const total = carousel.children.length;
+        if (total === 0) return;
+
+        // Circular navigation
+        currentSlide = (index + total) % total;
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+
+      function moveSlide(direction) {
+        showSlide(currentSlide + direction);
+      }
+
+      if (project) {
+        document.getElementById("project-title").textContent = project.title;
+        document.getElementById("project-description").innerHTML = project.description;
+
+        const gitLink = document.getElementById("project-gitlink");
+        gitLink.href = project.gitlink || "#";
+
+        const liveLink = document.getElementById("project-link");
+        if (project.link) {
+          liveLink.href = project.link;
+          liveLink.style.display = "inline-block";
+        } 
+        else {
+          liveLink.style.display = "none";
+        }
+
+        const carousel = document.getElementById("carousel-images");
+        if (project.images && project.images.length > 0) {
+          carousel.innerHTML = ""; // Prevent duplicates on page refresh
+          project.images.forEach(src => {
+            const img = document.createElement("img");
+            img.src = src;
+            carousel.appendChild(img);
+          });
+          showSlide(0);
+        } 
+        else {
+          document.querySelector(".carousel-container").style.display = "none";
+        }
+      } 
+      else {
+        document.querySelector(".project-details").innerHTML = `<h4>Project not found</h4>`;
+      }
+
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    const numParticles = 60;
+
+    for (let i = 0; i < numParticles; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 1,
+        vy: (Math.random() - 0.5) * 1
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.globalAlpha = 0.5; 
+
+      // Draw particles
+      particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+          ctx.fillStyle = '#ffffff'; // getComputedStyle(document.documentElement).getPropertyValue('--accent');
+          ctx.fill();
+      });
+
+      // Draw connections
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 100) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 100})`;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+      
+    </script>
+  </body>
+</html>

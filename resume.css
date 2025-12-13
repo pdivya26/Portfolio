@@ -1,0 +1,124 @@
+:root {
+    --bg: #1c0022; /* Darker purple background */
+    --text: #E0E0E0;
+    --accent1: #973197; /* Main purple accent */
+    --hover1: #b842b8; /* Lighter purple for hover/glow */
+    --accent2: #d8b8ff; /* Very light purple for strong glows/highlights */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Verdana';
+    background: radial-gradient(circle at top left, var(--bg), transparent 60%), radial-gradient(circle at bottom right, rgba(120, 30, 120, 0.3), transparent 70%), var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    background-attachment: fixed;
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+h1 {
+    text-align: center;
+}
+
+.navbar {
+    padding: 1rem 2rem !important; 
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar-container {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative; 
+    z-index: 2;
+}
+
+.nav-links a {
+    font-size: 1.1rem;
+    margin: 50px;
+    text-decoration: none;
+    color: #CCCCCC;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    justify-content: space-evenly;
+}
+
+.nav-links a:hover {
+    background-color: var(--hover1); 
+    border-radius: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 0 15px var(--hover1); 
+    transition: all 0.3s ease;
+}
+
+.nav-links a.active {
+    color: var(--text);
+    font-weight: bold;
+    border-bottom: 2px solid var(--hover1);
+}
+
+.resume-input {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.resume-input p {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.input {
+    display: inline;
+}
+
+select, button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    margin: 5px;
+}
+
+select {
+    width: 78%;
+    margin: 5px 0 5px 0;
+}
+
+button {
+    background-color: var(--accent1);
+    color: white;
+    cursor: pointer;
+    width: 100px;
+    height: 37px;
+}
+
+button:hover {
+    background-color: var(--hover1);
+}
+
+iframe {
+    width: 100%;
+    height: 1000px;
+    margin-top: 30px;
+    border: none;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
