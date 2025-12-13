@@ -195,6 +195,8 @@ h1 {
 
     .subtitle { font-size: 0.8rem; }
 
+    .projects-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+
     .tabs {
         gap: 0.4rem;
         font-size: 0.8rem;
