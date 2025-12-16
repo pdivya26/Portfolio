@@ -102,8 +102,7 @@ section {
 }
 
 .hero-text {
-    flex: 1;               
-    margin-top: 0px;
+    flex: 1;
     min-width: 300px;      
     max-width: 600px;
 }
@@ -153,6 +152,21 @@ section {
     color: #BEBEBE;
     max-width: 600px;
     margin: 20px 0px;
+}
+
+.resume-btn {
+    display: flex;
+}
+
+.resume-btn button {
+    margin: 1.1rem auto;
+    padding: 10px 10px;
+    font-size: 1rem;
+    background-color: var(--accent1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    justify-content: center;
 }
 
 h2 {
