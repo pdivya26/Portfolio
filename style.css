@@ -159,22 +159,22 @@ section {
     color: #BEBEBE;
     max-width: 600px;
     margin: 20px 0px;
+    text-align: justify;
 }
 
-.resume {
+.hero-btns {
     display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
 }
 
-.resume button {
-    margin: 1.1rem auto;
-    padding: 10px 10px;
+.resume-btn, .github-btn {
+    padding: 8px 10px;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 700;
     background-color: var(--accent1);
     color: white;
-    border: none;
     border-radius: 5px;
-    justify-content: center;
 }
 
 h2 {
@@ -504,12 +504,6 @@ label {
 
     .nav-links a { font-size: 0.7rem; }
 
-    .hero-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
     .hero-img-wrapper {
         width: 80%; 
         height: 80%;
@@ -528,6 +522,8 @@ label {
 
     .hero-text h1 { font-size: 1.5rem; }
     .hero-text p { font-size: 0.9rem; }
+
+    .hero-btns { justify-content: center; }
 
     /* Skills carousel adjustments */
     .skill-card { width: 90px; height: 90px; }
