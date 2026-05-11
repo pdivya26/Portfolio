@@ -49,8 +49,18 @@ body::before{
     border-bottom:1px solid rgba(255,255,255,.05);
 }
 
+.navbar{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(18px);
+    background:rgba(5,8,22,.35);
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
 .navbar-container{
-    width:90%;
+    width:min(1200px,90%);
     margin:auto;
     padding:1.2rem 0;
     display:flex;
@@ -59,7 +69,8 @@ body::before{
 
 .nav-links{
     display:flex;
-    gap:2.5rem;
+    align-items:center;
+    gap:2rem;
     flex-wrap:wrap;
 }
 
@@ -69,6 +80,7 @@ body::before{
     position:relative;
     font-weight:500;
     transition:.3s;
+    font-size:.95rem;
 }
 
 .nav-links a:hover{
@@ -86,13 +98,8 @@ body::before{
     transition:.3s;
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after{
+.nav-links a:hover::after{
     width:100%;
-}
-
-.nav-links a.active{
-    color:#00f5d4;
 }
 
 h1{
@@ -223,12 +230,18 @@ h1{
     font-size:.95rem;
 }
 
+.navbar-container{
+    width:100%;
+    padding:1rem .5rem;
+}
+
 .nav-links{
-    gap:1.2rem;
+    gap:1rem;
+    justify-content:center;
 }
 
 .nav-links a{
-    font-size:.9rem;
+    font-size:.7rem;
 }
 
 .projects-grid{

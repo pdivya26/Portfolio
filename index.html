@@ -30,7 +30,18 @@
     <!-- LOADER -->
 
     <div id="loader">
-        <h1>Loading...</h1>
+
+        <div class="loader-content">
+
+            <h1>
+                Loading
+                <span class="dot dot1">.</span>
+                <span class="dot dot2">.</span>
+                <span class="dot dot3">.</span>
+            </h1>
+
+        </div>
+
     </div>
 
     <!-- CURSOR GLOW -->
@@ -49,7 +60,7 @@
 
             <nav class="nav-links">
                 
-                <a href="#">Home</a>
+                <a href="#hero">Home</a>
                 
                 <a href="#about">About</a>
                 
@@ -69,7 +80,7 @@
 
     <!-- HERO -->
 
-    <section class="hero">
+    <section class="hero" id="hero">
 
         <div class="hero-content">
 
@@ -468,6 +479,41 @@
             origin: 'bottom',
             interval: 200,
             reset: false
+
+        });
+
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        window.addEventListener("scroll", () => {
+
+            let current = "";
+
+            sections.forEach(section => {
+
+                const sectionTop = section.offsetTop - 120;
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollY >= sectionTop &&
+                    scrollY < sectionTop + sectionHeight) {
+
+                    current = section.getAttribute("id");
+
+                }
+
+            });
+
+            navLinks.forEach(link => {
+
+                link.classList.remove("active");
+
+                const href = link.getAttribute("href");
+
+                if (href && href.includes(current)) {
+                    link.classList.add("active");
+                }
+
+            });
 
         });
 

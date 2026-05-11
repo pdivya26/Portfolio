@@ -78,16 +78,18 @@ section + section{
 }
 
 .navbar-container{
-    width:90%;
+    width:min(1200px,90%);
     margin:auto;
-    padding:1.3rem 0;
+    padding:1.2rem 0;
     display:flex;
     justify-content:center;
 }
 
 .nav-links{
     display:flex;
-    gap:2.5rem;
+    align-items:center;
+    gap:2rem;
+    flex-wrap:wrap;
 }
 
 .nav-links a{
@@ -96,9 +98,11 @@ section + section{
     position:relative;
     font-weight:500;
     transition:.3s;
+    font-size:.95rem;
 }
 
-.nav-links a:hover{
+.nav-links a:hover,
+.nav-links a.active{
     color:#00f5d4;
 }
 
@@ -113,7 +117,8 @@ section + section{
     transition:.3s;
 }
 
-.nav-links a:hover::after{
+.nav-links a:hover::after,
+.nav-links a.active::after{
     width:100%;
 }
 
@@ -439,24 +444,83 @@ textarea{
     background:#8b5cf6;
 }
 
+/* LOADER */
+
 #loader{
     position:fixed;
     inset:0;
     background:#050816;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     z-index:99999;
-    transition:1s;
+    transition:opacity .6s ease, visibility .6s ease;
 }
 
-#loader h1{
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-content h1{
     font-size:5rem;
-    letter-spacing:10px;
-    color:#f1ebff;
+    font-weight:700;
+    color:white;
+    letter-spacing:2px;
 }
 
-@media(max-width:900px){
+.dot{
+    opacity:0;
+    animation:dotAppear 1.5s infinite;
+}
+
+.dot1{
+    animation-delay:0s;
+}
+
+.dot2{
+    animation-delay:.3s;
+}
+
+.dot3{
+    animation-delay:.6s;
+}
+
+@keyframes dotAppear{
+
+    0%{
+        opacity:0;
+    }
+
+    25%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
+
+@media(max-width:768px){
+
+.loader-content h1{
+    font-size:1.8rem;
+}
+
+.navbar-container{
+    width:100%;
+    padding:1rem .5rem;
+}
+
+.nav-links{
+    gap:1rem;
+    justify-content:center;
+}
+
+.nav-links a{
+    font-size:.7rem;
+}
 
 .hero{
     padding-top:10rem;
@@ -511,11 +575,6 @@ textarea{
 
 section{
     padding:6rem 7%;
-}
-
-.nav-links{
-    gap:1.2rem;
-    font-size:.9rem;
 }
 
 .projects-grid{
