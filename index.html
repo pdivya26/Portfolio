@@ -1,249 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <title>Portfolio | Divya Poojari</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Divya Poojari | Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
 </head>
+
 <body>
+
+    <!-- LOADER -->
+
+    <div id="loader">
+        <h1>Loading...</h1>
+    </div>
+
+    <!-- CURSOR GLOW -->
+
+    <div class="cursor-glow"></div>
+
+    <!-- PARTICLE BG -->
+
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Nav Bar -->
+    <!-- NAVBAR -->
+
     <header class="navbar">
-      <div class="navbar-container">
-        <nav class="nav-links">
-            <a href="" class="active">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="certificates.html">Certifications</a>
-            <a href="index.html#contact-me">Contact</a>
-        </nav>
-      </div>
+
+        <div class="navbar-container">
+
+            <nav class="nav-links">
+                
+                <a href="#">Home</a>
+                
+                <a href="#about">About</a>
+                
+                <a href="#projects">Projects</a>
+                
+                <a href="#skills">Skills</a>
+                
+                <a href="certifications.html">Certifications</a>
+                
+                <a href="#contact">Contact</a>
+
+            </nav>
+
+        </div>
+
     </header>
 
-    <div class="main-content-wrapper">
+    <!-- HERO -->
 
-        <!-- Hero -->
-        <section class="hero">
+    <section class="hero">
 
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Hi, I'm Divya!</h1>
-                    <p>A B.Tech student passionate about building intuitive digital experiences with clean code and creative design.</p>
-                    <div class="hero-btns">
-                        <a class="resume-btn" href="Divya-Poojari-Resume.pdf" target="_blank" download>Download Resume</a>
-                        <a class="github-btn" href="https://github.com/pdivya26" target="_blank" download>Visit GitHub</a>
-                    </div>
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <h1>
+                    DIVYA <br>
+                    POOJARI
+                </h1>
+
+                <div class="typing-text"></div>
+
+                <p class="hero-description">
+                    A B.Tech student passionate about building intuitive digital experiences with clean code and creative design.
+                </p>
+
+                <div class="hero-btns">
+
+                    <a href="#" class="btn primary-btn"> Download Resume </a>
+
+                    <a href="https://github.com/pdivya26" target="_blank" class="btn secondary-btn"> GitHub </a>
+
                 </div>
-                <div class="hero-img-wrapper">
-                    <div class="spot-glow"></div>
-                    <div class="hero-img-frame">
-                        <img src="images/PixarMe.png" alt="Divya" class="hero-img" />
-                    </div>
-                </div>  
+
             </div>
-        </section>
 
-    <!-- About -->
-    <section class="about glass">
-        <h2>About Me</h2>
-        <p>I am a passionate and dedicated B.Tech Information Technology student with a strong foundation in programming, data analysis, and software development. I enjoy exploring diverse technologies and applying them to solve real-world problems.</p>
+            <div class="hero-img-wrapper">
 
-        <p>My skill set spans across multiple domains — from programming languages like <b>C, C++, Java, and Python</b>, to web technologies including <b>HTML, CSS, and JavaScript</b>. I also work with tools such as <b>Git, GitHub, Docker, and Figma</b> for collaboration and design. With a keen interest in data, I have hands-on experience in <b>Excel, Power BI, Tableau</b>, and database systems like <b>MySQL, PostgreSQL, and MongoDB</b>.</p>
+                <div class="hero-img-frame">
 
-        <p>I am always eager to learn, adapt, and contribute to projects that challenge me and help me grow as a professional. My goal is to leverage my skills to build impactful solutions and gain meaningful experiences in the fields of technology and data.
-        </p>
+                    <img
+                        src="images/PixarMe.png"
+                        alt="Divya"
+                        class="hero-img"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <!-- Projects -->
-    <section class="projects">
-        <h2>Projects</h2>
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2 class="section-title"> About Me </h2>
+
+        <div class="about glass">
+
+            <p>I am a passionate B.Tech Information Technology student with a strong foundation in programming, data analysis, and software development. I enjoy exploring diverse technologies and applying them to solve real-world problems.</p>
+
+            <br>
+
+            <p>I enjoy transforming creative ideas into meaningful digital experiences. My journey revolves around solving real-world problems through clean code, interactive interfaces, and scalable systems.</p>
+
+            <br>
+
+            <p>I am always eager to learn, adapt, and contribute to projects that challenge me and help me grow as a professional. My goal is to leverage my skills to build impactful solutions and gain meaningful experiences in the fields of technology and data.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title"> Featured Projects </h2>
+
         <div class="projects-grid">
-            <a href="project_details.html?id=leetmentor" target="_blank">
+
+            <!-- Netflix Content Analysis Strategy -->
+
+            <a href="project_details.html?id=netflix-analysis"
+                class="project-link-card">
+
                 <div class="card glass">
-                    <img src="images\LeetMentor.png" alt="LeetMentor" width="400px" class="project-image"/>
-                    <h3>LeetMentor</h3>
-                    <p>A Leetcode extension that detects the problem and provides step by step explain as well as the code to solve it.</p>
+
+                    <img src="images/NetflixDB/NA1.png" alt="Netflix Analysis">
+
+                    <div class="card-content">
+
+                        <h3> Netflix Content Analysis Strategy </h3>
+
+                        <p> An interactive analytics project exploring Netflix content trends, genres, ratings, and regional growth using Streamlit and Power BI dashboards. </p>
+
+                    </div>
+
                 </div>
+
             </a>
-            <a href="project_details.html?id=paperly" target="_blank">
+
+            <!-- LeetMentor -->
+
+            <a href="project_details.html?id=leetmentor"
+                class="project-link-card">
+
                 <div class="card glass">
-                    <img src="images\Paperly.png" alt="Paperly" width="400px" class="project-image"/>
-                    <h3>Paperly</h3>
-                    <p>A unified academic platform that aggregates research papers from multiple sources for easier discovery.</p>
+
+                    <img src="images/LeetMentor/LeetMentor.png" alt="LeetMentor">
+
+                    <div class="card-content">
+
+                        <h3>LeetMentor</h3>
+
+                        <p> AI-powered coding assistant that explains LeetCode problems step-by-step and generates optimized solutions. </p>
+
+                    </div>
+
                 </div>
+
             </a>
-            <a href="project_details.html?id=superstore-sales-prediction" target="_blank">
+
+            <!-- Paperly -->
+
+            <a href="project_details.html?id=paperly" class="project-link-card">
+
                 <div class="card glass">
-                    <img src="images\pred1.png" alt="Superstore Sales Prediction Model" width="400px" class="project-image"/>
-                    <h3 class="project-title">Superstore Sales Prediction</h3>
-                    <p>A model that analyzes historical sales data from a superstore to predict future sales trends.</p>
+
+                    <img src="images/Paperly/PPL2.png"
+                        alt="Paperly">
+
+                    <div class="card-content">
+
+                        <h3>Paperly</h3>
+
+                        <p> Unified academic platform that aggregates research papers from multiple sources. </p>
+
+                    </div>
+
                 </div>
+
             </a>
-            <a href="project_details.html?id=superstore-sales-analysis" target="_blank">
-                <div class="card glass">
-                    <img src="images\salesdb1.png" alt="Superstore Sales Analysis" width="400px" class="project-image"/>
-                    <h3>Superstore Sales Analysis</h3>
-                    <p>A fully interactive Power BI dashboard designed to analyze Superstore sales performance providing deep insights using dynamic filters and visual analytics.</p>
-                </div>
-            </a>
+
         </div>
-        <div class="view-all-container">
-            <a class="view-all" href="projects.html" target="_blank">View All</a>
+
+        <div class="projects-more">
+
+            <a href="projects.html" class="btn primary-btn"> View More </a>
+            
         </div>
+
     </section>
 
-    <!-- Skills -->
-    <h2 class="skills">Skills</h2>
-    <section class="skills-carousel">
-        <div class="carousel-track" id="skillsTrack"></div>
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title"> Skills & Technologies </h2>
+
+        <div class="skills-container">
+
+            <div class="skill glass">HTML</div>
+            <div class="skill glass">CSS</div>
+            <div class="skill glass">JavaScript</div>
+            <div class="skill glass">Python</div>
+            <div class="skill glass">Java</div>
+            <div class="skill glass">C++</div>
+            <div class="skill glass">Docker</div>
+            <div class="skill glass">MongoDB</div>
+            <div class="skill glass">MySQL</div>
+            <div class="skill glass">Power BI</div>
+            <div class="skill glass">Tableau</div>
+            <div class="skill glass">Figma</div>
+
+        </div>
+
     </section>
 
-    <!-- Contact -->
-    <section id="contact-me" class="contact-me glass">
-        <h2>Let's Get in Touch!</h2>
-        <div class="contact-form">
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="section-title"> Let's Connect </h2>
+
+        <div class="contact glass">
+
             <form action="https://formspree.io/f/xdkzdndd" method="POST">
-                <label for="name">Name</label>
-                <input type="text" name="name" placeholder="Enter your name here" id="name" required>
 
-                <label for="email">Email</label>
-                <input type="email" name="_replyto" placeholder="Enter your email here" id="email" required>
+                <input type="text" placeholder="Your Name" required>
 
-                <label for="message">Message</label>
-                <textarea name="message" placeholder="Enter your message here" id="message" rows="5" required></textarea>
+                <input type="email" placeholder="Your Email" required>
 
-                <div class="submit-btn">
-                    <button type="submit" class="btn">Send Message</button>
-                </div>
+                <textarea rows="6" placeholder="Your Message"></textarea>
+
+                <button class="submit-btn"> Send Message </button>
+
             </form>
+
+            <div class="socials">
+
+                <a href="mailto:divyagpoojari15@gmail.com" class="glass">
+
+                    <i class="fas fa-envelope"></i>
+
+                </a>
+
+                <a href="https://github.com/pdivya26" target="_blank" class="glass">
+
+                    <i class="fab fa-github"></i>
+
+                </a>
+
+                <a href="https://www.linkedin.com/in/divya-poojari/" target="_blank" class="glass">
+
+                    <i class="fab fa-linkedin"></i>
+
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="contact-links" style="text-align: center; margin-top: 2rem;">
-            <h3>Or Connect with Me Here</h3>
-            <div class="links">
-                <a href="mailto:divyagpoojari15@gmail.com">
-                    <i class="fas fa-envelope"></i> Email
-                </a>
-                <a href="https://github.com/pdivya26" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/divya-poojari/" target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-        </div>
     </section>
+
+    <!-- SCRIPT -->
 
     <script>
-        const currentPage = window.location.pathname.split("/").pop();
-        const navLinks = document.querySelectorAll(".nav-links a");
 
-        navLinks.forEach(link => {
-            const linkPage = link.getAttribute("href");
-            if (linkPage === currentPage || linkPage === "" && currentPage === "index.html") {
-                link.classList.add("active");
-            }
+        /* LOADER */
+
+        window.addEventListener("load", () => {
+
+            setTimeout(() => {
+
+                document.getElementById("loader").style.opacity = "0";
+
+                setTimeout(() => {
+
+                    document.getElementById("loader").style.display = "none";
+
+                }, 1000);
+
+            }, 1500);
+
         });
 
-        const skills = [
-            { icon: "fab fa-c", label: "C" },
-            { icon: "fab fa-c", label: "C++", extra: "++" },
-            { icon: "fab fa-java", label: "Java" },
-            { icon: "fab fa-python", label: "Python" },
-            { icon: "fab fa-html5", label: "HTML5" },
-            { icon: "fab fa-css3-alt", label: "CSS3" },
-            { icon: "fab fa-js", label: "JavaScript" },
-            { icon: "fab fa-git-alt", label: "Git" },
-            { icon: "fab fa-github", label: "GitHub" },
-            { icon: "fab fa-figma", label: "Figma" },
-            { icon: "fab fa-docker", label: "Docker" },
-            { icon: "fas fa-file-excel", label: "Excel" },
-            { icon: "fas fa-chart-simple", label: "Power BI" },
-            { icon: "fas fa-chart-line", label: "Tableau" },
-            { icon: "fas fa-database", label: "MySQL" },
-            { icon: "fas fa-database", label: "PostgreSQL" },
-            { icon: "fas fa-leaf", label: "MongoDB" }
+        /* TYPING EFFECT */
+
+        const texts = [
+            "AI Explorer",
+            "Data Enthusiast",
+            "Creative Technologist"
         ];
 
-        const track = document.getElementById("skillsTrack");
+        let count = 0;
+        let index = 0;
+        let currentText = "";
+        let letter = "";
 
-        skills.concat(skills).forEach(skill => { // duplicate list for loop effect
-            const card = document.createElement("div");
-            card.className = "skill-card glass";
+        (function type() {
 
-            card.innerHTML = `
-                <div class="skill-icon">
-                    <i class="${skill.icon}"></i>
-                    ${skill.extra ? `<span class="plus-plus">${skill.extra}</span>` : ""}
-                </div>
-                <span>${skill.label}</span>
-            `;
+            if (count === texts.length) {
+                count = 0;
+            }
 
-            track.appendChild(card);
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+
+            document.querySelector(".typing-text").textContent = letter;
+
+            if (letter.length === currentText.length) {
+
+                count++;
+                index = 0;
+
+                setTimeout(type, 1500);
+
+            } else {
+
+                setTimeout(type, 80);
+
+            }
+
+        })();
+
+        /* CURSOR GLOW */
+
+        const glow = document.querySelector(".cursor-glow");
+
+        window.addEventListener("mousemove", (e) => {
+
+            glow.style.left = e.clientX + "px";
+            glow.style.top = e.clientY + "px";
+
         });
 
-        const form = document.querySelector("form");
+        /* PARTICLE BACKGROUND */
 
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
+        const canvas = document.getElementById("bg-canvas");
+        const ctx = canvas.getContext("2d");
 
-            const formData = new FormData(form);
-
-            fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    alert("Message sent successfully!");
-                    form.reset(); 
-                } else {
-                    alert("Something went wrong. Please try again.");
-                }
-            }).catch(error => {
-                alert("There was a problem submitting your form.");
-            });
-        });
-
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-
-        let PARTICLE_COUNT;
-
-        if (window.innerWidth < 480) {
-            PARTICLE_COUNT = 20;     // small phones
-        } else if (window.innerWidth < 768) {
-            PARTICLE_COUNT = 35;     // tablets
-        } else {
-            PARTICLE_COUNT = 60;     // desktops
-        }
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
 
         const particles = [];
 
-        // Create particles
-        for (let i = 0; i < PARTICLE_COUNT; i++) {
+        for (let i = 0; i < 70; i++) {
+
             particles.push({
+
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 1,
-                vy: (Math.random() - 0.5) * 1,
-                size: window.innerWidth < 480 ? 1.5 : 2 // smaller dots on phone
+                vx: (Math.random() - .5) * .8,
+                vy: (Math.random() - .5) * .8,
+                size: 2
+
             });
+
         }
 
-        function draw() {
+        function animate() {
+
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.globalAlpha = 0.55;
 
             particles.forEach(p => {
+
                 p.x += p.vx;
                 p.y += p.vy;
 
@@ -252,38 +399,80 @@
 
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fillStyle = "#ffffff";
+                ctx.fillStyle = "white";
                 ctx.fill();
+
             });
 
-            const LINK_DIST = window.innerWidth < 480 ? 60 : 100;
-
             for (let i = 0; i < particles.length; i++) {
+
                 for (let j = i + 1; j < particles.length; j++) {
+
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
+
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    if (dist < LINK_DIST) {
+                    if (dist < 100) {
+
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / LINK_DIST})`;
+
+                        ctx.strokeStyle =
+                            `rgba(255,255,255,${1 - dist / 100})`;
+
                         ctx.moveTo(particles[i].x, particles[i].y);
+
                         ctx.lineTo(particles[j].x, particles[j].y);
+
                         ctx.stroke();
+
                     }
+
                 }
+
             }
 
-            requestAnimationFrame(draw);
+            requestAnimationFrame(animate);
+
         }
 
-        draw();
+        animate();
+
+        /* RESIZE */
 
         window.addEventListener("resize", () => {
-            resizeCanvas();
+
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+
+        });
+
+        /* TILT */
+
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.3
+
+        });
+
+        /* SCROLL REVEAL */
+
+        ScrollReveal().reveal(
+            '.glass,.hero-text,.hero-img-wrapper', {
+
+            distance: '60px',
+            duration: 1500,
+            origin: 'bottom',
+            interval: 200,
+            reset: false
+
         });
 
     </script>
 
 </body>
+
 </html>

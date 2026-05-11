@@ -1,187 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Certifications | Divya</title>
-  <link rel="stylesheet" href="certifications.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications | Divya</title>
+
+    <link rel="stylesheet" href="certifications.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Nav Bar -->
+    <!-- Navbar -->
     <header class="navbar">
-      <div class="navbar-container">
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="" class="active">Certifications</a>
-            <a href="index.html#contact-me">Contact</a>
-        </nav>
-      </div>
+        <div class="navbar-container">
+            <nav class="nav-links">
+                
+                <a href="index.html">Home</a>
+                
+                <a href="index.html#about">About</a>
+                
+                <a href="projects.html">Projects</a>
+                
+                <a href="index.html#skills">Skills</a>
+                
+                <a href="">Certifications</a>
+                
+                <a href="index.html#contact">Contact</a>
+
+            </nav>
+        </div>
     </header>
 
-    <h1>My Certifications</h1>
-    <p class="subtitle">Certifications that reflect my commitment to continuous learning and expertise in various domains.</p>
+    <!-- Heading -->
+    <h1 class="page-title"> My Certifications </h1>
 
+    <p class="subtitle">
+        Certifications that reflect my commitment to continuous learning and expertise across multiple domains.
+    </p>
+
+    <!-- Tabs -->
     <div class="tabs">
-        <div class="tab active glass" onclick="filterCerts('all')">All</div>
-        <div class="tab glass" onclick="filterCerts('ac')">Academics</div>
-        <div class="tab glass" onclick="filterCerts('da')">Data Analytics</div>
-        <div class="tab glass" onclick="filterCerts('ss')">Soft Skills</div>
-        <div class="tab glass" onclick="filterCerts('bs')">Business</div>
+        <div class="tab active" onclick="filterCerts('all',event)">All</div>
+        <div class="tab" onclick="filterCerts('ac',event)">Academics</div>
+        <div class="tab" onclick="filterCerts('da',event)">Data Analytics</div>
+        <div class="tab" onclick="filterCerts('ss',event)">Soft Skills</div>
+        <div class="tab" onclick="filterCerts('bs',event)">Business</div>
     </div>
 
+    <!-- Certifications -->
     <div class="certifications-grid" id="certificationsGrid">
-        <!-- Certification Card -->
-        <a href="images\Overall Topper Certificate.jpeg" target="_blank" class="card-link">
-          <div class="cert-card glass" data-category="ac">
-            <img src="images\Overall Topper Certificate.jpeg" alt="Sem VI Overall Topper Certificate" class="cert-image"/>
-            <div class="cert-title">Overall Topper In INFT Department</div>
-            <div class="cert-desc">Declared Overall Topper of INFT Department for Sem VI 2025 - 26.</div>
-          </div>
+
+      <!-- Card -->
+        <a href="images/RS Merit Certificate.jpeg" target="_blank" class="card-link">
+            <div class="cert-card glass" data-category="ac">
+
+                <img src="images/RS Merit Certificate.jpeg" class="cert-image">
+
+                <div class="cert-content">
+
+                    <div class="cert-title">
+                        Merit Certificate - Recommendation System
+                    </div>
+
+                    <div class="cert-desc">
+                        Secured First Place in Recommendation System in Sem VII.
+                    </div>
+
+                </div>
+
+            </div>
         </a>
 
-        <a href="images\DFE Merit Certificate.jpeg" target="_blank">
-          <div class="cert-card glass" data-category="ac">
-          <img src="images\DFE Merit Certificate.jpeg" alt="DFE Merit Certificate" class="cert-image"/>
-          <div class="cert-title">Certificate of Merit for Data & Feature Engineering</div>
-          <div class="cert-desc">Secured First Place in subject Data & Feature Engineering in Sem VI.</div>
-          </div>
+        <!-- Card -->
+        <a href="images/TWSMA Merit Certificate.jpeg" target="_blank" class="card-link">
+            <div class="cert-card glass" data-category="ac">
+
+                <img src="images/TWSMA Merit Certificate.jpeg" class="cert-image">
+
+                <div class="cert-content">
+
+                    <div class="cert-title">
+                        Merit Certificate - Text, Web, Social Media Analytics
+                    </div>
+
+                    <div class="cert-desc">
+                        Secured First Place in Text, Web, Social Media Analytics in Sem VII.
+                    </div>
+
+                </div>
+
+            </div>
         </a>
 
-        <a href="images\PLM Merit Certificate.jpeg" target="_blank">
-          <div class="cert-card glass" data-category="ac">
-            <img src="images\PLM Merit Certificate.jpeg" alt="PLM Merit Certificate" class="cert-image"/>
-            <div class="cert-title">Certificate of Merit for Product Lifecycle Management</div>
-            <div class="cert-desc">Secured First Place in subject Product Lifecycle Management in Sem VI.</div>
-          </div>
+        <!-- Card -->
+        <a href="images/OR Merit Certificate.jpeg" target="_blank" class="card-link">
+            <div class="cert-card glass" data-category="ac">
+
+                <img src="images/OR Merit Certificate.jpeg" class="cert-image">
+
+                <div class="cert-content">
+
+                    <div class="cert-title">
+                        Merit Certificate - Operation Research
+                    </div>
+
+                    <div class="cert-desc">
+                        Secured First Place in Operation Research in Sem VII.
+                    </div>
+
+                </div>
+
+            </div>
         </a>
 
-        <a href="images\ADBMS Merit Certificate.jpeg" target="_blank">
-          <div class="cert-card glass" data-category="ac">
-            <img src="images\ADBMS Merit Certificate.jpeg" alt="ADBMS Merit Certificate" class="cert-image"/>
-            <div class="cert-title">Certificate of Merit for ADBMS</div>
-            <div class="cert-desc">Secured First Place in subject Advanced Database Management System in Sem V.</div>
-          </div>
+        <!-- Card -->
+        <a href="images/RM Merit Certificate.jpeg" target="_blank" class="card-link">
+            <div class="cert-card glass" data-category="ac">
+
+                <img src="images/RM Merit Certificate.jpeg" class="cert-image">
+
+                <div class="cert-content">
+
+                    <div class="cert-title">
+                        Merit Certificate - Research Methodology
+                    </div>
+
+                    <div class="cert-desc">
+                        Secured First Place in Research Methodology in Sem VII.
+                    </div>
+
+                </div>
+
+            </div>
         </a>
 
-        <a href="images\Introduction to MS Excel Certificate.jpg" target="_blank">
-          <div class="cert-card glass" data-category="da">
-            <img src="images/Introduction to MS Excel Certificate.jpg" alt="Introduction to MS Excel Course Certificate" class="cert-image"/>
-            <div class="cert-title">Introduction to MS Excel</div>
-            <div class="cert-desc">Gained foundational skills in Excel, including formulas, charts, data analysis, and organizing data efficiently.</div>
-          </div>
+        <!-- Card -->
+        <a href="images/Overall Topper Certificate.jpeg" target="_blank" class="card-link">
+            <div class="cert-card glass glass" data-category="ac">
+
+                <img src="images/Overall Topper Certificate.jpeg" class="cert-image">
+
+                <div class="cert-content">
+
+                    <div class="cert-title">
+                        Overall Topper of INFT Department
+                    </div>
+
+                    <div class="cert-desc">
+                        Declared Overall Topper of INFT Department for Sem VI 2025-26.
+                    </div>
+
+                </div>
+
+            </div>
         </a>
 
-        <a href="images\Power BI Certificate.jpg" target="_blank" >
-          <div class="cert-card glass" data-category="da">
-            <img src="images/Power BI Certificate.jpg" alt="Power BI for Beginners Course Certificate" class="cert-image"/>
-            <div class="cert-title">Power BI for Beginners</div>
-            <div class="cert-desc">Learned to create interactive dashboards and visualizations, analyze data effectively, and share insights using Power BI.</div>
-          </div>
+        <!-- Card -->
+        <a href="images/DFE Merit Certificate.jpeg" target="_blank" class="card-link">
+            <div class="cert-card glass" data-category="ac">
+
+                <img src="images/DFE Merit Certificate.jpeg" class="cert-image">
+
+                <div class="cert-content">
+
+                    <div class="cert-title">
+                        Merit Certificate - Data & Feature Engineering
+                    </div>
+
+                    <div class="cert-desc">
+                        Secured First Place in Data & Feature Engineering in Sem VI.
+                    </div>
+
+                </div>
+
+            </div>
         </a>
 
-        <a href="images\IIM Business Management Course Certificate.jpg" target="_blank">
-          <div class="cert-card glass" data-category="bs">
-            <img src="images/IIM Business Management Course Certificate.jpg" alt="IIM Business Management Course Certificate" class="cert-image"/>
-            <div class="cert-title">Business Management Course - IIM Mumbai</div>
-            <div class="cert-desc">Covered four key areas - Operations & Supply Chain Management, Financial Management, Marketing Management & Business Economics</div>  
-          </div>
+        <!-- Card -->
+        <a href="images/PLM Merit Certificate.jpeg" target="_blank" class="card-link">
+            <div class="cert-card glass" data-category="ac">
+
+                <img src="images/PLM Merit Certificate.jpeg" class="cert-image">
+
+                <div class="cert-content">
+
+                    <div class="cert-title">
+                        Merit Certificate - Product Lifecycle Management
+                    </div>
+
+                    <div class="cert-desc">
+                        Secured First Place in Product Lifecycle Management in Sem VI.
+                    </div>
+
+                </div>
+
+            </div>
         </a>
 
-        <a href="images\Career Edge - Young Professional Certificate.jpg" target="_blank">
-          <div class="cert-card glass" data-category="ss">
-            <img src="images/Career Edge - Young Professional Certificate.jpg" alt="Career Edge - Young Professional Course Certificate" class="cert-image"/>
-            <div class="cert-title">TCS iON Career Edge - Young Professional</div>
-            <div class="cert-desc">Gained essential workplace skills, including communication, business etiquette, and professional readiness for a corporate environment.</div>
-          </div>
+        <!-- Card -->
+        <a href="images/ADBMS Merit Certificate.jpeg" target="_blank" class="card-link">
+            <div class="cert-card glass" data-category="ac">
+
+                <img src="images/ADBMS Merit Certificate.jpeg" class="cert-image">
+
+                <div class="cert-content">
+
+                    <div class="cert-title">
+                        Merit Certificate - ADBMS
+                    </div>
+
+                    <div class="cert-desc">
+                        Secured First Place in Advanced DBMS in Sem V.
+                    </div>
+
+                </div>
+
+            </div>
         </a>
+
+        <!-- Card -->
+        <a href="images/Introduction to MS Excel Certificate.jpg" target="_blank" class="card-link">
+            <div class="cert-card glass" data-category="da">
+
+                <img src="images/Introduction to MS Excel Certificate.jpg" class="cert-image">
+
+                <div class="cert-content">
+
+                    <div class="cert-title">
+                        Introduction to MS Excel
+                    </div>
+
+                    <div class="cert-desc">
+                        Learned formulas, charts, data analysis, and spreadsheet management.
+                    </div>
+
+                </div>
+
+            </div>
+        </a>
+
+        <!-- Card -->
+        <a href="images/Power BI Certificate.jpg" target="_blank" class="card-link">
+            <div class="cert-card glass" data-category="da">
+
+                <img src="images/Power BI Certificate.jpg" class="cert-image">
+
+                <div class="cert-content">
+
+                    <div class="cert-title">
+                        Power BI for Beginners
+                    </div>
+
+                    <div class="cert-desc">
+                        Built dashboards and interactive visualizations using Power BI.
+                    </div>
+
+                </div>
+
+            </div>
+        </a>
+
+        <!-- Card -->
+        <a href="images/IIM Business Management Course Certificate.jpg" target="_blank" class="card-link">
+            <div class="cert-card glass" data-category="bs">
+
+                <img src="images/IIM Business Management Course Certificate.jpg" class="cert-image">
+
+                <div class="cert-content">
+
+                    <div class="cert-title">
+                        Business Management Course - IIM Mumbai
+                    </div>
+
+                    <div class="cert-desc">
+                        Covered operations, finance, marketing, and business economics.
+                    </div>
+
+                </div>
+
+            </div>
+        </a>
+
+        <!-- Card -->
+        <a href="images/Career Edge - Young Professional Certificate.jpg" target="_blank" class="card-link">
+            <div class="cert-card glass" data-category="ss">
+
+                <img src="images/Career Edge - Young Professional Certificate.jpg" class="cert-image">
+
+                <div class="cert-content">
+
+                    <div class="cert-title">
+                        TCS iON Career Edge - Young Professional
+                    </div>
+
+                    <div class="cert-desc">
+                        Developed workplace communication and professional readiness skills.
+                    </div>
+
+                </div>
+
+            </div>
+        </a>
+
     </div>
 
     <script>
-        function filterCerts(category) {
-        const allTabs = document.querySelectorAll('.tab');
-        allTabs.forEach(tab => tab.classList.remove('active'));
-        event.target.classList.add('active');
 
-        const certs = document.querySelectorAll('.cert-card');
-        certs.forEach(cert => {
-            const cat = cert.getAttribute('data-category');
-            const wrapper = cert.parentElement;
+        function filterCerts(category,event){
 
-            if (category === 'all' || cat === category) {
-                wrapper.style.display = "block";
-            } else {
-                wrapper.style.display = "none";
-            }
-        });
-    }
+            const tabs=document.querySelectorAll('.tab');
 
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
+            tabs.forEach(tab=>{
+                tab.classList.remove('active');
+            });
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+            event.target.classList.add('active');
 
-        const particles = [];
-        const numParticles = 60;
+            const certs=document.querySelectorAll('.cert-card');
 
-        for (let i = 0; i < numParticles; i++) {
-        particles.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            vx: (Math.random() - 0.5) * 1,
-            vy: (Math.random() - 0.5) * 1
-        });
+            certs.forEach(cert=>{
+
+                const cat=cert.getAttribute('data-category');
+
+                const wrapper=cert.parentElement;
+
+                if(category==='all' || cat===category){
+                    wrapper.style.display='flex';
+                }
+
+                else{
+                    wrapper.style.display='none';
+                }
+
+            });
+
         }
 
-        function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.globalAlpha = 0.5; 
+        const canvas=document.getElementById('bg-canvas');
 
-        // Draw particles
-        particles.forEach(p => {
-            p.x += p.vx;
-            p.y += p.vy;
+        const ctx=canvas.getContext('2d');
 
-            if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-            if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+        canvas.width=window.innerWidth;
 
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-            ctx.fillStyle = '#ffffff'; 
-            // getComputedStyle(document.documentElement).getPropertyValue('--accent');
-            ctx.fill();
-        });
+        canvas.height=window.innerHeight;
 
-        // Draw connections
-        for (let i = 0; i < particles.length; i++) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 100) {
-              ctx.beginPath();
-              ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 100})`;
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.stroke();
-            }
-          }
+        const particles=[];
+
+        const numParticles=60;
+
+        for(let i=0;i<numParticles;i++){
+
+            particles.push({
+
+                x:Math.random()*canvas.width,
+
+                y:Math.random()*canvas.height,
+
+                vx:(Math.random()-.5)*1,
+
+                vy:(Math.random()-.5)*1
+
+            });
+
         }
 
-        requestAnimationFrame(draw);
+        function draw(){
+
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+
+            particles.forEach(p=>{
+
+                p.x+=p.vx;
+
+                p.y+=p.vy;
+
+                if(p.x<0 || p.x>canvas.width) p.vx*=-1;
+
+                if(p.y<0 || p.y>canvas.height) p.vy*=-1;
+
+                ctx.beginPath();
+
+                ctx.arc(p.x,p.y,2,0,Math.PI*2);
+
+                ctx.fillStyle='#ffffff';
+
+                ctx.fill();
+
+            });
+
+            for(let i=0;i<particles.length;i++){
+
+                for(let j=i+1;j<particles.length;j++){
+
+                    const dx=particles[i].x-particles[j].x;
+
+                    const dy=particles[i].y-particles[j].y;
+
+                    const dist=Math.sqrt(dx*dx+dy*dy);
+
+                    if(dist<100){
+
+                        ctx.beginPath();
+
+                        ctx.strokeStyle=`rgba(255,255,255,${1-dist/100})`;
+
+                        ctx.moveTo(particles[i].x,particles[i].y);
+
+                        ctx.lineTo(particles[j].x,particles[j].y);
+
+                        ctx.stroke();
+
+                    }
+
+                }
+
+            }
+
+            requestAnimationFrame(draw);
+
         }
 
         draw();
 
-        window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        window.addEventListener('resize',()=>{
+
+            canvas.width=window.innerWidth;
+
+            canvas.height=window.innerHeight;
+
         });
 
     </script>
+
 </body>
+
 </html>
