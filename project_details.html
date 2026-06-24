@@ -153,6 +153,46 @@
 
         const projects = {
 
+            "quick-commerce-analysis": {
+
+                title: "Quick Commerce Platform Analysis",
+
+                tag: "DATA ANALYTICS",
+
+                description: `Analyzed 854K quick-commerce orders using SQL and Power BI to evaluate platform performance, customer behavior, and delivery operations.<br><br>
+
+                <b>Features:</b>
+
+                <ul>
+
+                    <li>Platform performance benchmarking across 8 companies</li>
+
+                    <li>Delivery efficiency and SLA threshold analysis</li>
+
+                    <li>Customer behavior and demographic insights</li>
+
+                    <li>Revenue, discount, and order value analysis</li>
+
+                    <li>City-wise market and spending pattern comparisons</li>
+
+                    <li>Interactive Power BI dashboards with dynamic filtering</li>
+
+                    <li>Advanced SQL analytics using CTEs and window functions</li>
+
+                </ul>`,
+
+                gitlink: "https://github.com/pdivya26/Quick-Commerce-Platform-Analysis.git",
+
+                images: [
+
+                    "images/QuickCommerceDB/QC1.png",
+                    "images/QuickCommerceDB/QC2.png",
+                    "images/QuickCommerceDB/QC3.png"
+
+                ]
+
+            },
+
             "netflix-analysis": {
 
                 title: "Netflix Content Strategy Analysis",
@@ -739,16 +779,13 @@
 
         function goBack() {
 
-            if (document.referrer.includes("projects.html")) {
+            const params = new URLSearchParams(window.location.search);
+            const from = params.get("from");
 
-                history.back();
-
-            }
-
-            else {
-
+            if (from === "home") {
+                window.location.href = "index.html#projects";
+            } else {
                 window.location.href = "projects.html";
-
             }
 
         }
